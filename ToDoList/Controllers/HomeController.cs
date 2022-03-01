@@ -1,17 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
-using ToDoList.Models;
 
 namespace ToDoList.Controllers
 {
-  public class HomeController : Controller
-  {
-
-    [Route("/")]
-    public ActionResult Index()
+    public class HomeController : Controller
     {
-      Item starterItem = new Item("Add first item to To Do List");
-      return View(starterItem);
-    }
 
-  }
+      [HttpGet("/")]
+      public ActionResult Index()
+      {
+        return View();
+      }
+
+    }
 }
