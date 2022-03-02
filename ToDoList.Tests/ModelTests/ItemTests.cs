@@ -105,7 +105,7 @@ namespace ToDoList.Tests
       Item newItem2 = new Item(description02);
 
       //Act
-      Item result = new Item("Incorrect test item");
+      Item result = Item.Find(2);
 
       //Assert
       Assert.AreEqual(newItem2, result);
