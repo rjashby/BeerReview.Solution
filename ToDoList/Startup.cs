@@ -27,6 +27,7 @@ namespace ToDoList
     {
       app.UseDeveloperExceptionPage();
       app.UseRouting();
+      app.UseStaticFiles(); //THIS IS NEW
 
       app.UseEndpoints(routes =>
       {
