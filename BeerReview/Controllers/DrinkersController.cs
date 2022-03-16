@@ -68,10 +68,32 @@ namespace BeerReview.Controllers
       return RedirectToAction("Index");
     }
 
+    // public ActionResult AddBeer(int id)
+    // {
+    //   var thisDrinker = _db.Drinkers.FirstOrDefault(drinker => drinker.DrinkerId == id);
+    //   ViewBag.BeerId = new SelectList(_db.Beers, "BeerId", "Name");
+    //   return View(thisDrinker);
+    // }
+
     public ActionResult AddBeer(int id)
     {
       var thisDrinker = _db.Drinkers.FirstOrDefault(drinker => drinker.DrinkerId == id);
-      ViewBag.BeerId = new SelectList(_db.Beers, "BeerId", "Name");
+      var thisBeerDrinker = _db.BeerDrinker.Where(beerdrinker => beerdrinker.DrinkerId == id);
+      
+      List<Beer> beers = _db.Beers.ToList();
+      List<Beer> beerList = _db.Beers.ToList();
+
+      foreach (BeerDrinker beerDrinker in thisBeerDrinker)
+      {
+        foreach(Beer beer in beers)
+        {
+          if (beer.BeerId == beerDrinker.BeerId)
+          {
+            beerList.Remove(beer);
+          }
+        }
+      }
+      ViewBag.BeerId = new SelectList(beerList, "BeerId", "Name");
       return View(thisDrinker);
     }
 

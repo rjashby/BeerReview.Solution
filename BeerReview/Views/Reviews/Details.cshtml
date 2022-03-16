@@ -2,13 +2,14 @@
   Layout = "_Layout";
 }
 
-@model BeerReview.Models.Review
+@using BeerReview.Models;
+@model BeerReview.Models.Review;
 
 <h2>Review Details</h2>
 <hr />
 <h3>@Html.DisplayNameFor(model => model.Title): @Html.DisplayFor(model => model.Title)</h3>
-<h3>Beer Name: @Html.DisplayFor(model => model.Beer.Name)</h3>
-<h3>User Name: @Html.DisplayFor(model => model.Drinker.Name)</h3>
+<h3>Beer Name: @Html.ActionLink($"{Model.Beer.Name}", "Details", "Beers", new { id = Model.Beer.BeerId })</h3>
+<h3>User Name: @Html.ActionLink($"{Model.Drinker.Name}", "Details", "Drinkers", new { id = Model.Drinker.DrinkerId })</h3>
 
 <h3>Review: @Html.DisplayFor(model => model.Description)</h3>
 

@@ -2,6 +2,7 @@
   Layout = "_Layout";
 }
 
+@using BeerReview.Models;
 @model BeerReview.Models.Beer;
 
 <h2>Beer Details</h2>
@@ -19,15 +20,16 @@ else
   <ul>
   @foreach(var join in Model.JoinEntities)
   {
-    <li>@join.Drinker.Name</li>
+    <li>@Html.ActionLink($"{join.Drinker.Name}", "Details", "Drinkers", new { id = join.Drinker.DrinkerId })</li>
   }
   </ul>
 }
+
 <h4>Reviews of this beer:</h4>
   <ul>
   @foreach(var review in Model.Reviews)
   {
-    <li>@review.Title</li>
+    <li>@Html.ActionLink($"{review.Title}", "Details", "Reviews", new { id = review.ReviewId })</li>
   }
   </ul>
 
