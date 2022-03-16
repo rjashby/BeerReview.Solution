@@ -1,17 +1,17 @@
 using System.Collections.Generic;
 
-namespace ToDoList.Models
+namespace BeerDrinker.Models
 {
-  public class Item
+  public class Drinker
   {
-    public Item()
+    public Drinker()
     {
-      this.JoinEntities = new HashSet<CategoryItem>();
+      this.JoinEntities = new HashSet<BeerDrinker>();
     }
-    public int ItemId { get; set; }
-    public string Description { get; set; }
+    public int DrinkerId { get; set; }
+    public string Name { get; set; }
 
-    public virtual ICollection<CategoryItem> JoinEntities { get;}
+    public virtual ICollection<BeerDrinker> JoinEntities { get;}
   }
 }
 //   public class Item

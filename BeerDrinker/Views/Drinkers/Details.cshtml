@@ -1,0 +1,35 @@
+@{
+  Layout = "_Layout";
+}
+
+@model BeerDrinker.Models.Drinker
+
+<h2>User Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+
+@if(@Model.JoinEntities.Count == 0)
+{
+  <p>This user has not logged any beers. Shame on them!</p>
+}
+else
+{
+  <h4>Beers this user has had:</h4>
+  <ul>
+  @foreach(var join in Model.JoinEntities)
+  {
+    <li>@join.Beer.Name</li>
+    @using (Html.BeginForm("DeleteBeer", "Drinkers"))
+    {
+      @Html.Hidden("joinId", @join.BeerDrinkerId)
+      <input type="submit" value="Delete"/>
+    }
+  }
+  </ul>
+}
+
+<p>@Html.ActionLink("Add a Beer to User List", "AddBeer", new { id = Model.DrinkerId })</p>
+
+<p>@Html.ActionLink("Back to User List", "Index")</p>
+<p>@Html.ActionLink("Edit User", "Edit", new { id = Model.DrinkerId })</p>
+<p>@Html.ActionLink("Delete User", "Delete", new { id = Model.DrinkerId })</p>

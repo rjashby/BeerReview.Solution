@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+@using BeerDrinker.Models;
+
+<h1>Beers</h1>
+
+@if (@Model.Count == 0)
+{
+  <h3>No beers have been added yet!</h3>
+} 
+
+<ul>
+  @foreach(Beer beer in Model)
+  {
+    <li>@Html.ActionLink($"{beer.Name}", "Details", new { id = beer.beerId })</li>
+  }
+</ul>
+
+<p>@Html.ActionLink("Add new beer", "Create")</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>

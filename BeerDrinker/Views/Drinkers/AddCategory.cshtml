@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+@model ToDoList.Models.Item
+
+<h2>Add a beer</h2>
+
+<h4>Add a beer to this user's list: @Html.DisplayFor(model => model.Name)</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.DrinkerId)
+
+  @Html.Label("Select a beer to associate")
+  @Html.DropDownList("BeerId")
+
+  <input type="submit" value="Save" />
+}
+
+<p>@Html.ActionLink("Back to user list", "Index")</p>
