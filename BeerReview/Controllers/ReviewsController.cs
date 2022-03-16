@@ -47,37 +47,18 @@ namespace BeerReview.Controllers
 
     public ActionResult Edit(int id)
     {
-      var thisReview = _db.Reviews.FirstOrDefault(review => review.ReviewId == id);
-      // ViewBag.BeerId = new SelectList(_db.Beers, "BeerId", "Name");
+      var thisReview = _db.Reviews
+      .FirstOrDefault(review => review.ReviewId == id);
       return View(thisReview);
     }
 
     [HttpPost]
-    public ActionResult Edit(Review review, string Title, string Description)
+    public ActionResult Edit(Review review)
     {
-      _db.Reviews.Add(review);
       _db.Entry(review).State = EntityState.Modified;
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-
-    // public ActionResult AddBeer(int id)
-    // {
-    //   var thisDrinker = _db.Drinkers.FirstOrDefault(drinker => drinker.DrinkerId == id);
-    //   ViewBag.BeerId = new SelectList(_db.Beers, "BeerId", "Name");
-    //   return View(thisDrinker);
-    // }
-
-    // [HttpPost]
-    // public ActionResult AddBeer(Drinker drinker, int BeerId)
-    // {
-    //   if (BeerId != 0)
-    //   {
-    //     _db.BeerDrinker.Add(new BeerDrinker() { BeerId = BeerId, DrinkerId = drinker.DrinkerId });
-    //     _db.SaveChanges();
-    //   }
-    //   return RedirectToAction("Index");
-    // }
 
     public ActionResult Delete(int id)
     {
@@ -93,14 +74,5 @@ namespace BeerReview.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-
-    // [HttpPost]
-    // public ActionResult DeleteBeer(int joinId)
-    // {
-    //   var joinEntry = _db.BeerDrinker.FirstOrDefault(entry => entry.BeerDrinkerId == joinId);
-    //   _db.BeerDrinker.Remove(joinEntry);
-    //   _db.SaveChanges();
-    //   return RedirectToAction("Index");
-    // }
   }
 }

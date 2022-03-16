@@ -10,7 +10,7 @@
   @Html.LabelFor(model => model.Name)
   @Html.TextBoxFor(model => model.Name)<br>
   @Html.LabelFor(model => model.ABV)
-  @Html.TextBoxFor(model => model.ABV)
+  @Html.TextBoxFor(model => model.ABV, new { type = "double", required = "required" })
   <input type="submit" value="Add Beer" />
 }
 <p>@Html.ActionLink("See All Beers", "Index")</p>

@@ -13,7 +13,7 @@ namespace BeerReview.Models
 
     public int BeerId { get; set; }
     public string Name { get; set; }
-    public int ABV { get; set; }
+    public double ABV { get; set; }
     public virtual ICollection<Review> Reviews { get; set; }
     public virtual ICollection<BeerDrinker> JoinEntities { get; set; }
   }

@@ -9,6 +9,8 @@
 @using (Html.BeginForm())
 {
   @Html.HiddenFor(model => model.ReviewId)
+  @Html.HiddenFor(model => model.BeerId)
+  @Html.HiddenFor(model => model.DrinkerId)
 
   @Html.LabelFor(model => model.Title)
   @Html.TextBoxFor(model => model.Title)

@@ -3,14 +3,16 @@ using System;
 using BeerReview.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BeerReview.Migrations
 {
     [DbContext(typeof(BeerReviewContext))]
-    partial class BeerReviewContextModelSnapshot : ModelSnapshot
+    [Migration("20220316203613_Newest")]
+    partial class Newest
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

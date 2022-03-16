@@ -30,7 +30,7 @@ else
   <ul>
   @foreach(var review in Model.Reviews)
   {
-    <li>@Html.ActionLink($"{review.Title}", "Details", new { id = review.ReviewId })</li>
+    <li>@Html.ActionLink($"{review.Title}", "Details", "Reviews", new { id = review.ReviewId })</li>
   }
   </ul>
 }

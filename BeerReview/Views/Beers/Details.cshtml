@@ -6,7 +6,8 @@
 
 <h2>Beer Details</h2>
 <hr />
-<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+<h3>@Html.DisplayFor(model => model.Name)</h3>
+<h3>@Html.DisplayNameFor(model => model.ABV): @Html.DisplayFor(model => model.ABV)</h3>
 
 @if(@Model.JoinEntities.Count == 0)
 {
