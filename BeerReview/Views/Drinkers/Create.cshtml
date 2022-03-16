@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@model BeerReview.Models.Drinker
+
+<h4>Add a new user</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name)
+
+  @Html.Label("Select a beer to add")
+  @Html.DropDownList("BeerId")
+
+  <input type="submit" value="Add new drinker" class="btn btn-default" />
+}
+<p>@Html.ActionLink("Show all users", "Index")</p>
