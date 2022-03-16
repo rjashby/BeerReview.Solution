@@ -1,0 +1,23 @@
+@{
+  Layout = "_Layout";
+}
+
+@model BeerReview.Models.Review
+
+<h2>Review Editor</h2>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.ReviewId)
+
+  @Html.LabelFor(model => model.Title)
+  @Html.TextBoxFor(model => model.Title)
+
+  @Html.LabelFor(model => model.Description)
+  @Html.TextBoxFor(model => model.Description)
+
+  <input type="submit" value="Save" />
+}
+
+<p>@Html.ActionLink("Back to list", "Index")</p>
+

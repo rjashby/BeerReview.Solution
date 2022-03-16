@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+@using BeerReview.Models;
+@model List<BeerReview.Models.Review>;
+
+<h1>Reviews</h1>
+
+@if (@Model.Count == 0)
+{
+  <h3>No reviews have been added yet!</h3>
+} 
+
+@foreach (Review review in Model)
+{
+  <li>@Html.ActionLink($"{review.Title}", "Details", new { id = review.ReviewId })</li>
+}
+
+<p>@Html.ActionLink("Add new review", "Create")</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>

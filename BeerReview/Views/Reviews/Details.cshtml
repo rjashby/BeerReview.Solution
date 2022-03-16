@@ -1,0 +1,17 @@
+@{
+  Layout = "_Layout";
+}
+
+@model BeerReview.Models.Review
+
+<h2>Review Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.Title): @Html.DisplayFor(model => model.Title)</h3>
+<h3>Beer Name: @Html.DisplayFor(model => model.Beer.Name)</h3>
+<h3>User Name: @Html.DisplayFor(model => model.Drinker.Name)</h3>
+
+<h3>Review: @Html.DisplayFor(model => model.Description)</h3>
+
+<p>@Html.ActionLink("Back to Review List", "Index")</p>
+<p>@Html.ActionLink("Edit Review", "Edit", new { id = Model.DrinkerId })</p>
+<p>@Html.ActionLink("Delete Review", "Delete", new { id = Model.DrinkerId })</p>

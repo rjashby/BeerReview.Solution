@@ -26,6 +26,13 @@ else
     }
   }
   </ul>
+  <h4>Reviews from this Drinker:</h4>
+  <ul>
+  @foreach(var review in Model.Reviews)
+  {
+    <li>@Html.ActionLink($"{review.Title}", "Details", new { id = review.ReviewId })</li>
+  }
+  </ul>
 }
 
 <p>@Html.ActionLink("Add a Beer to User List", "AddBeer", new { id = Model.DrinkerId })</p>

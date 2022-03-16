@@ -22,6 +22,13 @@ else
   }
   </ul>
 }
+<h4>Reviews of this beer:</h4>
+  <ul>
+  @foreach(var review in Model.Reviews)
+  {
+    <li>@review.Title</li>
+  }
+  </ul>
 
 <p>@Html.ActionLink("Back to Beers", "Index")</p>
 <p>@Html.ActionLink("Edit Beer", "Edit", new { id = Model.BeerId })</p>

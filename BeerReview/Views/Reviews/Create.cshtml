@@ -1,0 +1,24 @@
+@{
+  Layout = "_Layout";
+}
+
+@model BeerReview.Models.Review
+
+<h4>Add Review</h4>
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Title)
+  @Html.TextBoxFor(model => model.Title)
+
+  @Html.LabelFor(model => model.Description)
+  @Html.TextAreaFor(model => model.Description)
+
+  @Html.Label("Select a beer to associate")
+  @Html.DropDownList("BeerId")
+  
+  @Html.Label("Select a Drinker to associate")
+  @Html.DropDownList("DrinkerId")
+
+  <input type="submit" value="Add Review" />
+}
+<p>@Html.ActionLink("See All Reviews", "Index")</p>

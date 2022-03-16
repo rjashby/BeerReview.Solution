@@ -7,6 +7,7 @@ namespace BeerReview.Models
     public DbSet<Beer> Beers { get; set; }
     public DbSet<Drinker> Drinkers { get; set; }
     public DbSet<BeerDrinker> BeerDrinker { get; set; }
+    public DbSet<Review> Reviews { get; set; }
 
     public BeerReviewContext(DbContextOptions options) : base(options) { }
 
