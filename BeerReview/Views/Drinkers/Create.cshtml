@@ -11,6 +11,9 @@
   @Html.LabelFor(model => model.Name)
   @Html.TextBoxFor(model => model.Name)
 
+  @Html.LabelFor(model => model.SignUp);
+  @Html.TextBoxFor(model => model.SignUp, new { type = "date"});
+
   @Html.Label("Select a beer to add")
   @Html.DropDownList("BeerId")
 

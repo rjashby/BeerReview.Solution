@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace BeerReview.Models
@@ -10,6 +11,7 @@ namespace BeerReview.Models
     }
     public int DrinkerId { get; set; }
     public string Name { get; set; }
+    public DateTime SignUp { get; set; }
 
     public virtual ICollection<BeerDrinker> JoinEntities { get;}
   }

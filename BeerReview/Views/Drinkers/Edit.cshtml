@@ -15,8 +15,8 @@
   @Html.LabelFor(model => model.Name)
   @Html.EditorFor(model => model.Name)
 
-  @Html.Label("Select a beer")
-  @Html.DropDownList("BeerId")
+  @Html.LabelFor(model => model.SignUp);
+  @Html.TextBoxFor(model => model.SignUp, new { type = "date"});
 
   <input type="submit" value="Save" />
 }

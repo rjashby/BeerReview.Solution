@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace BeerDrinker.Migrations
+namespace BeerReview.Migrations
 {
     public partial class Initial : Migration
     {

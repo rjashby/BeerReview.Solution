@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace BeerDrinker.Migrations
+namespace BeerReview.Migrations
 {
     [DbContext(typeof(BeerReviewContext))]
     partial class BeerReviewContextModelSnapshot : ModelSnapshot

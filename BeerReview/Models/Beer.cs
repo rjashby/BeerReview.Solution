@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace BeerReview.Models
@@ -11,6 +12,8 @@ namespace BeerReview.Models
 
     public int BeerId { get; set; }
     public string Name { get; set; }
+    public int ABV { get; set; }
+    public string Review { get; set; }
     public virtual ICollection<BeerDrinker> JoinEntities { get; set; }
   }
 }
