@@ -1,9 +1,57 @@
-div#footer {
-  position:fixed;
+/* div#footer {
+  position:;
   bottom:0px;
   left:0px;
   width:100%;
   color:#CCC;
-  background:#333;
   padding:8px;
+} */
+
+* {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+}
+
+#headerImg {
+  border-radius: 50%;
+  border: solid rgb(0, 0, 0) 5px;
+  width: 25%;
+}
+
+#mainLogo {
+  background-color: rgb(118, 189, 109);
+}
+
+#navColor {
+  background-color: goldenrod;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 7rem;    /* Footer height */
+}
+
+#footer {
+  position: fixed;
+  bottom: 4rem;
+  width: 100%;
+  height: 2.5rem;            /* Footer height */
+}
+
+a {
+  color: goldenrod;
+  transition: 0.5s;
+}
+
+a:hover {
+  color: forestgreen;
+  transform: translateY(-7px);
+}
+
+body {
+  background-color: lightgray;
 }
